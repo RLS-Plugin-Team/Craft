@@ -33,15 +33,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(336, 0, 4 * $args[1]);
 			                    $getitem = Item::get(45, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -50,6 +47,8 @@ class main extends PluginBase implements Listener{
 			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
 			             }
 			             break;
+						
+						//
 			             
 			             case "2":
 			             if(isset($args[1])){
