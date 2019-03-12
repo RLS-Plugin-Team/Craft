@@ -47,23 +47,18 @@ class main extends PluginBase implements Listener{
 			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
 			             }
 			             break;
-						
-						//
 			             
 			             case "2":
 			             if(isset($args[1])){
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 0, 6 * $args[1]);
 			                    $getitem = Item::get(53, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("オークの木の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -78,15 +73,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(4, 0, 6 * $args[1]);
 			                    $getitem = Item::get(67, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("石の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -101,15 +93,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(45, 0, 6 * $args[1]);
 			                    $getitem = Item::get(108, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("レンガの階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -124,15 +113,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(98, 0, 6 * $args[1]);
 			                    $getitem = Item::get(109, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("石レンガの階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -147,15 +133,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(112, 0, 6 * $args[1]);
 			                    $getitem = Item::get(114, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("ネザーレンガの階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -170,15 +153,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(24, 0, 6 * $args[1]);
 			                    $getitem = Item::get(128, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("砂岩の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -193,15 +173,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(179, 0, 6 * $args[1]);
 			                    $getitem = Item::get(180, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("赤砂岩の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -216,15 +193,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 1, 6 * $args[1]);
 			                    $getitem = Item::get(134, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("マツの木の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -239,15 +213,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 2, 6 * $args[1]);
 			                    $getitem = Item::get(135, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("シラカバの木の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -262,15 +233,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 3, 6 * $args[1]);
 			                    $getitem = Item::get(136, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("ジャングルの木の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -285,15 +253,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 4, 6 * $args[1]);
 			                    $getitem = Item::get(163, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("アカシアの木の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -308,15 +273,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 5, 6 * $args[1]);
 			                    $getitem = Item::get(164, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("ダークオークの木の階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -331,15 +293,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(155, 0, 6 * $args[1]);
 			                    $getitem = Item::get(156, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("クォーツブロックの階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -354,15 +313,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(201, 0, 6 * $args[1]);
 			                    $getitem = Item::get(203, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("プルプァブロックの階段を{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -377,15 +333,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 0, 3 * $args[1]);
 			                    $getitem = Item::get(158, 0, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("オークの木のハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -400,15 +353,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 1, 3 * $args[1]);
 			                    $getitem = Item::get(158, 1, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("マツの木のハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -423,15 +373,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 2, 3 * $args[1]);
 			                    $getitem = Item::get(158, 2, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("シラカバの木のハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -446,15 +393,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 3, 3 * $args[1]);
 			                    $getitem = Item::get(158, 3, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("ジャングルの木のハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -469,15 +413,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 4, 3 * $args[1]);
 			                    $getitem = Item::get(158, 4, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("アカシアの木のハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -492,15 +433,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(5, 5, 3 * $args[1]);
 			                    $getitem = Item::get(158, 5, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("ダークオークの木のハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -515,15 +453,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(98, 0, 3 * $args[1]);
 			                    $getitem = Item::get(44, 5, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("石レンガのハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -538,15 +473,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(45, 0, 3 * $args[1]);
 			                    $getitem = Item::get(44, 4, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("レンガブロックのハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
@@ -561,15 +493,12 @@ class main extends PluginBase implements Listener{
 			                 if(is_numeric($args[1]) && $args[1] >= 0){
 			                    $item = Item::get(155, 0, 3 * $args[1]);
 			                    $getitem = Item::get(44, 6, $args[1]);
-			                    for ($id = 0; $id < $args[1]; $id++){
-			                        if($sender->getInventory()->contains($item)){
-			                            $sender->getInventory()->removeItem($item);
-			                            $sender->getInventory()->addItem($getitem);
-			                            $sender->sendMessage("クォーツブロックのハーフを{$args[1]}個 クラフトしました！");
-			                        }else{
-			                            $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                        }
-			                        break;
+			                    if($sender->getInventory()->contains($item)){
+			                        $sender->getInventory()->removeItem($item);
+			                        $sender->getInventory()->addItem($getitem);
+			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
+			                    }else{
+			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 			                    }
 			                 }else{
 			                     $sender->sendMessage("個数は整数で指定してください");
