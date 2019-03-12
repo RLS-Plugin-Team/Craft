@@ -1,0 +1,12 @@
+---
+name: Craft
+main: Craft\main
+version: 1.0.0
+api: 3.0.0
+author: narapon
+load: POSTWORLD
+commands:
+  craft:
+    description: クラフト
+    usage: /craft <クラフトID> <個数>
+...
