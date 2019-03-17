@@ -124,6 +124,10 @@ class main extends PluginBase implements Listener{
 				     case "24":
 				     $this->CraftSystem($sender, $args[1], 336, 0, 4, 45, 0, "レンガブロック");
 			             break;
+					   
+				     case "25":
+				     $this->CraftSystem2($sender, $args[1], 86, 0, 1, 50, 0, 1, 91, 0, "ジャック・オ・ランタン");
+				     break;
 			                
 			             case "list":
 			             if(!isset($args[1])){
@@ -169,7 +173,15 @@ class main extends PluginBase implements Listener{
 			                     break;
 					     
 					     case "4":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <4/5>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 				             $sender->sendMessage("| レンガブロック | レンガ×4 | 24 |");
+					     $sender->sendMessage("| ジャック・オ・ランタン | かぼちゃ×1 松明×1 | 25 |");
+					     $sender->sendMessage("| 未設定 | - | 26 |");
+					     $sender->sendMessage("| 未設定 | - | 27 |");
+					     $sender->sendMessage("| 未設定 | - | 28 |");
+					     $sender->sendMessage("| 未設定 | - | 29 |");
+				             $sender->sendMessage("| 未設定 | - | 30 |");
 			                     
 			                     default:
 			                     $sender->sendMessage("use: /craft list <ページ数>");
