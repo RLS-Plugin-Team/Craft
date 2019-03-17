@@ -41,7 +41,7 @@ class main extends PluginBase implements Listener{
 			             break;
 			             
 			             case "4":
-				     $this->CraftSystem($sender, $args[1], 98, 0, 6, 109 0, "石レンガの階段");
+				     $this->CraftSystem($sender, $args[1], 98, 0, 6, 109, 0, "石レンガの階段");
 			             break;
 			             
 				     case "5":
