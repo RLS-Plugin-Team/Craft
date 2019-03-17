@@ -26,487 +26,128 @@ class main extends PluginBase implements Listener{
 			if($sender instanceof Player){
 			    if(!isset($args[0])){
 			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
+				$sender->sendMessage("use: /craft list <ページ数>");
 			     }else{
 			        switch($args[0]){
 			             case "1":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(336, 0, 4 * $args[1]);
-			                    $getitem = Item::get(45, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 5, 0, 6, 53, 0, "オークの木の階段");
 			             break;
 			             
 			             case "2":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 0, 6 * $args[1]);
-			                    $getitem = Item::get(53, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 4, 0, 6, 67, 0, "石の階段");
 			             break;
 			             
 			             case "3":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(4, 0, 6 * $args[1]);
-			                    $getitem = Item::get(67, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 45, 0, 6, 108, 0, "レンガの階段");
 			             break;
 			             
 			             case "4":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(45, 0, 6 * $args[1]);
-			                    $getitem = Item::get(108, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 98, 0, 6, 109, 0, "石レンガの階段");
 			             break;
 			             
-			             case "5":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(98, 0, 6 * $args[1]);
-			                    $getitem = Item::get(109, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     case "5":
+				     $this->CraftSystem($sender, $args[1], 112, 0, 6, 114, 0, "レザーレンガの階段");
 			             break;
 			             
 			             case "6":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(112, 0, 6 * $args[1]);
-			                    $getitem = Item::get(114, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 24, 0, 6, 128, 0, "砂岩の階段");
 			             break;
 			             
 			             case "7":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(24, 0, 6 * $args[1]);
-			                    $getitem = Item::get(128, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 179, 0, 6, 180, 0, "赤砂岩の階段");
 			             break;
 			             
 			             case "8":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(179, 0, 6 * $args[1]);
-			                    $getitem = Item::get(180, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 5, 1, 6, 134, 0, "マツの木の階段");
 			             break;
 			             
 			             case "9":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 1, 6 * $args[1]);
-			                    $getitem = Item::get(134, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 5, 2, 6, 135, 0, "シラカバの木の階段");
 			             break;
 			             
 			             case "10":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 2, 6 * $args[1]);
-			                    $getitem = Item::get(135, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             $this->CraftSystem($sender, $args[1], 5, 3, 6, 136, 0, "ジャングルの木の階段");
 			             break;
 			             
 			             case "11":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 3, 6 * $args[1]);
-			                    $getitem = Item::get(136, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 5, 4, 6, 163, 0, "アカシアの木の階段");
 			             break;
 			             
 			             case "12":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 4, 6 * $args[1]);
-			                    $getitem = Item::get(163, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 5, 5, 6, 164, 0, "ダークオークの木の階段");
 			             break;
 			             
 			             case "13":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 5, 6 * $args[1]);
-			                    $getitem = Item::get(164, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 155, 0, 6, 156, 0, "クォーツブロックの階段");
 			             break;
 			             
 			             case "14":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(155, 0, 6 * $args[1]);
-			                    $getitem = Item::get(156, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 201, 0, 6, 203, 0, "プルプァブロックの階段");
 			             break;
 			             
 			             case "15":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(201, 0, 6 * $args[1]);
-			                    $getitem = Item::get(203, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+				     $this->CraftSystem($sender, $args[1], 5, 0, 3, 158, 0, "オークの木のハーフ");
 			             break;
 			             
 			             case "16":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 0, 3 * $args[1]);
-			                    $getitem = Item::get(158, 0, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
-			             break;
+			             $this->CraftSystem($sender, $args[1], 5, 1, 3, 158, 1, "マツの木のハーフ");
+				     break;
 			             
 			             case "17":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 1, 3 * $args[1]);
-			                    $getitem = Item::get(158, 1, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             $this->CraftSystem($sender, $args[1], 5, 2, 3, 158, 2, "シラカバの木のハーフ");
 			             break;
 			             
 			             case "18":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 2, 3 * $args[1]);
-			                    $getitem = Item::get(158, 2, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
-			             break;
-			             
-			             case "19":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 3, 3 * $args[1]);
-			                    $getitem = Item::get(158, 3, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             $this->CraftSystem($sender, $args[1], 5, 3, 3, 158, 3, "ジャングルの木のハーフ");
 			             break;
 			                
-			             case "20":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 4, 3 * $args[1]);
-			                    $getitem = Item::get(158, 4, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             case "19":
+			             $this->CraftSystem($sender, $args[1], 5, 4, 3, 158, 4, "アカシアの木のハーフ");
 			             break;
 			                   
-			             case "21":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(5, 5, 3 * $args[1]);
-			                    $getitem = Item::get(158, 5, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             case "20":
+			             $this->CraftSystem($sender, $args[1], 5, 5, 3, 158, 5, "ダークオークの木のハーフ");
 			             break;
 			              
+			             case "21":
+			             $this->CraftSystem($sender, $args[1], 98, 0, 3, 45, 5, "石レンガのハーフ");
+			             break;
+			             
 			             case "22":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(98, 0, 3 * $args[1]);
-			                    $getitem = Item::get(44, 5, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             $this->CraftSystem($sender, $args[1], 45, 0, 3, 44, 4, "レンガブロックのハーフ");
 			             break;
 			             
 			             case "23":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(45, 0, 3 * $args[1]);
-			                    $getitem = Item::get(44, 4, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+			             $this->CraftSystem($sender, $args[1], 155, 0, 3, 44, 6, "クォーツブロックのハーフ");
 			             break;
-			             
-			             case "24":
-			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(155, 0, 3 * $args[1]);
-			                    $getitem = Item::get(44, 6, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
-			             }else{
-			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
-			             }
+					     
+				     case "24":
+				     $this->CraftSystem($sender, $args[1], 336, 0, 4, 45, 0, "レンガブロック");
 			             break;
+					   
+				     case "25":
+				     $this->CraftSystem2($sender, $args[1], 86, 0, 1, 50, 0, 1, 91, 0, "ジャック・オ・ランタン");
+				     break;
+						
+				     case "31":
+			             $this->CraftSystem($sender, $args[1], 265, 0, 9, 42, 0, "鉄ブロック");
+			             break;
+					     
+				     case "32":
+				     $this->CraftSystem($sender, $args[1], 266, 0, 9, 41, 0, "金ブロック");
+			             break;
+						
+				     case "33":
+				     $this->CraftSystem($sender, $args[1], 55, 0, 9, 152, 0, "レッドストーンブロック");
+			             break;
+						
+				     case "34":
+				     $this->CraftSystem($sender, $args[1], 386, 0, 9, 133, 0, "エメラルドブロック");
+				     break;
+					
+				     case "35":
+				     $this->CraftSystem($sender, $args[1], 351, 4, 9, 22, 0, "ラピスラズリブロック");
+				     break;
 			                
 			             case "list":
 			             if(!isset($args[1])){
@@ -514,43 +155,66 @@ class main extends PluginBase implements Listener{
 			             }else{
 			                 switch($args[1]){
 			                     case "1":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/3>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/5>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
-			                     $sender->sendMessage("| レンガブロック | レンガ×4 | 1 |");
-			                     $sender->sendMessage("| オークの木の階段 | 木材×6 | 2 |");
-			                     $sender->sendMessage("| 石の階段 | 丸石×6 | 3 |");
-			                     $sender->sendMessage("| レンガの階段 | レンガブロック×6 | 4 |");
-			                     $sender->sendMessage("| 石レンガの階段 | 石レンガブロック×6 | 5 |");
-			                     $sender->sendMessage("| レザーレンガの階段 | 暗黒レンガブロック×6 | 6 |");
-			                     $sender->sendMessage("| 砂岩の階段 | 砂岩×6 | 7 |");
-			                     $sender->sendMessage("| 赤砂岩の階段 | 赤砂岩×6 | 8 |");
+			                     $sender->sendMessage("| オークの木の階段 | 木材×6 | 1 |");
+			                     $sender->sendMessage("| 石の階段 | 丸石×6 | 2 |");
+			                     $sender->sendMessage("| レンガの階段 | レンガブロック×6 | 3 |");
+			                     $sender->sendMessage("| 石レンガの階段 | 石レンガブロック×6 | 4 |");
+			                     $sender->sendMessage("| レザーレンガの階段 | 暗黒レンガブロック×6 | 5 |");
+			                     $sender->sendMessage("| 砂岩の階段 | 砂岩×6 | 6 |");
+			                     $sender->sendMessage("| 赤砂岩の階段 | 赤砂岩×6 | 7 |");
 			                     break;
 			                     
 			                     case "2":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <2/3>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <2/5>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
-			                     $sender->sendMessage("| マツの木の階段 | マツの木材×4 | 9 |");
-			                     $sender->sendMessage("| シラカバの木の階段 | シラカバの木材×6 | 10 |");
-			                     $sender->sendMessage("| ジャングルの木の階段 | ジャングルの木材×6 | 11 |");
-			                     $sender->sendMessage("| アカシアの木の階段 | アカシアの木材×6 | 12 |");
-			                     $sender->sendMessage("| ダークオークの木の階段 | ダークオーの木材×6 | 13 |");
-			                     $sender->sendMessage("| クォーツブロックの階段 | ネザー水晶×6 | 14 |");
-			                     $sender->sendMessage("| プルプァブロックの階段 | プルプァブロック×6 | 15 |");
+			                     $sender->sendMessage("| マツの木の階段 | マツの木材×4 | 8 |");
+			                     $sender->sendMessage("| シラカバの木の階段 | シラカバの木材×6 | 9 |");
+			                     $sender->sendMessage("| ジャングルの木の階段 | ジャングルの木材×6 | 10 |");
+			                     $sender->sendMessage("| アカシアの木の階段 | アカシアの木材×6 | 11 |");
+			                     $sender->sendMessage("| ダークオークの木の階段 | ダークオーの木材×6 | 12 |");
+			                     $sender->sendMessage("| クォーツブロックの階段 | ネザー水晶×6 | 13 |");
+			                     $sender->sendMessage("| プルプァブロックの階段 | プルプァブロック×6 | 14 |");
 			                     break;
 			                     
 			                     case "3":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/3>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/5>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
-			                     $sender->sendMessage("| オークの木のハーフ | オークの木材×3 | 16 |");
-			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×4 | 17 |");
-			                     $sender->sendMessage("| シラカバの木のハーフ | シラカバの木材×6 | 18 |");
-			                     $sender->sendMessage("| ジャングルの木のハーフ | ジャングルの木材×6 | 19 |");
-			                     $sender->sendMessage("| アカシアの木のハーフ | アカシアの木材×6 | 20 |");
-			                     $sender->sendMessage("| ダークオークの木のハーフ | ダークオーの木材×6 | 21 |");
-			                     $sender->sendMessage("| 石レンガのハーフ | 石レンガ×3 | 22 |");
-			                     $sender->sendMessage("| レンガブロックのハーフ | レンガブロック×3 | 23 |");
-			                     $sender->sendMessage("| クォーツブロックのハーフ | クォーツブロック×3 | 24 |");
+			                     $sender->sendMessage("| オークの木のハーフ | オークの木材×3 | 15 |");
+			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×4 | 16 |");
+			                     $sender->sendMessage("| シラカバの木のハーフ | シラカバの木材×6 | 17 |");
+			                     $sender->sendMessage("| ジャングルの木のハーフ | ジャングルの木材×6 | 18 |");
+			                     $sender->sendMessage("| アカシアの木のハーフ | アカシアの木材×6 | 19 |");
+			                     $sender->sendMessage("| ダークオークの木のハーフ | ダークオーの木材×6 | 20 |");
+			                     $sender->sendMessage("| 石レンガのハーフ | 石レンガ×3 | 21 |");
+			                     $sender->sendMessage("| レンガブロックのハーフ | レンガブロック×3 | 22 |");
+			                     $sender->sendMessage("| クォーツブロックのハーフ | クォーツブロック×3 | 23 |");
 			                     break;
+					     
+					     case "4":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <4/5>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
+				             $sender->sendMessage("| レンガブロック | レンガ×4 | 24 |");
+					     $sender->sendMessage("| ジャック・オ・ランタン | かぼちゃ×1 松明×1 | 25 |");
+					     $sender->sendMessage("| 未設定 | - | 26 |");
+					     $sender->sendMessage("| 未設定 | - | 27 |");
+					     $sender->sendMessage("| 未設定 | - | 28 |");
+					     $sender->sendMessage("| 未設定 | - | 29 |");
+				             $sender->sendMessage("| 未設定 | - | 30 |");
+					     break;
+							 
+					     case "5":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/5>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
+				             $sender->sendMessage("| 鉄ブロック | 鉄インゴット×9 | 31 |");
+					     $sender->sendMessage("| 金ブロック | 金インゴット×9 | 32 |");
+					     $sender->sendMessage("| レッドストーンブロック | レッドストーン×9 | 33 |");
+					     $sender->sendMessage("| エメラルドブロック | エメラルド×9 | 34 |");
+					     $sender->sendMessage("| ラピスラズリブロック | ラピスラズリ×9 | 35 |");
+					     $sender->sendMessage("| 未設定 | - | 36 |");
+				             $sender->sendMessage("| 未設定 | - | 37 |");
+					     break;
 			                     
 			                     default:
 			                     $sender->sendMessage("use: /craft list <ページ数>");
@@ -560,15 +224,66 @@ class main extends PluginBase implements Listener{
 			             break;
 			             
 			             default:
-			             $sender->sendMessage("そのクラフトIDは存在しません");
-			             $sender->sendMessage("クラフトIDを/craft listで確かめてください");
+			             $sender->sendMessage("[§eCraft§f] そのクラフトIDは存在しません");
+			             $sender->sendMessage("[§eCraft§f] クラフトIDを/craft listで確かめてください");
 			             break;
 			         }
 			     }
 			 }else{
-			     $sender->sendMessage("ゲーム内で実行してください");
+			     $sender->sendMessage("[§eCraft§f] ゲーム内で実行してください");
 			 }
 		}
 		return true;
+     }
+	
+     public function CraftSystem(Player $sender, $args, $UseID, $UseDamage, $UseCount, $GetID, $GetDamage, $itemName){
+	     if(isset($args)){
+		     if(is_numeric($args) && $args >= 0){
+			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
+		             $getitem = Item::get($GetID, $GetDamage, $args);
+			     if($sender->getInventory()->contains($item)){
+				     if($sender->getInventory()->canAddItem($getitem)){
+					     $sender->getInventory()->removeItem($item);
+			                     $sender->getInventory()->addItem($getitem);
+			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+				     }else{
+					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+				     }
+		             }else{
+			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+		             }
+	             }else{
+		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+	             }
+	     }else{
+		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
+	     }
+     }
+		
+     public function CraftSystem2(Player $sender, $args, $UseID, $UseDamage, $UseCount, $UseID2, $UseDamage2, $UseCount2, $GetID, $GetDamage, $itemName){
+	     if(isset($args)){
+		     if(is_numeric($args) && $args >= 0){
+			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
+			     $item2 = Item::get($UseID2, $UseDamage2, $UseCount2 * $args);
+		             $getitem = Item::get($GetID, $GetDamage, $args);
+			     if($sender->getInventory()->contains($item) && $sender->getInventory()->contains($item2)){
+				     if($sender->getInventory()->canAddItem($getitem)){
+					     $sender->getInventory()->removeItem($item);
+				             $sender->getInventory()->removeItem($item2);
+			                     $sender->getInventory()->addItem($getitem);
+			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+				     }else{
+					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+				     }
+		             }else{
+			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+		             }
+	             }else{
+		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+	             }
+	     }else{
+		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
+		     $sender->sendMessage("use: /craft list <ページ数>");
+	     }
      }
 }
