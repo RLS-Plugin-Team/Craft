@@ -211,4 +211,30 @@ class main extends PluginBase implements Listener{
 		     $sender->sendMessage("use: /craft list <ページ数>");
 	     }
      }
+		
+     public function CraftSystem2(Player $sender, $args, $UseID, $UseDamage, $UseCount, $UseID2, $UseDamage2, $UseCount2, $GetID, $GetDamage, $itemName){
+	     if(isset($args)){
+		     if(is_numeric($args) && $args >= 0){
+			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
+			     $item2 = Item::get($UseID2, $UseDamage2, $UseCount2 * $args);
+		             $getitem = Item::get($GetID, $GetDamage, $args);
+			     if($sender->getInventory()->contains($item) && $sender->getInventory()->contains($items)){
+				     if($sender->getInventory()->canAddItem($getitem)){
+					     $sender->getInventory()->removeItem($item);
+				             $sender->getInventory()->removeItem($item2);
+			                     $sender->getInventory()->addItem($getitem);
+			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+				     }else{
+					     $sender->sendMessage("[§eCraft§f] "
+		             }else{
+			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+		             }
+	             }else{
+		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+	             }
+	     }else{
+		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
+		     $sender->sendMessage("use: /craft list <ページ数>");
+	     }
+     }
 }
