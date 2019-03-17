@@ -197,9 +197,13 @@ class main extends PluginBase implements Listener{
 			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
 		             $getitem = Item::get($GetID, $GetDamage, $args);
 			     if($sender->getInventory()->contains($item)){
-				     $sender->getInventory()->removeItem($item);
-			             $sender->getInventory()->addItem($getitem);
-			             $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+				     if($sender->getInventory()->canAddItem($getitem)){
+					     $sender->getInventory()->removeItem($item);
+			                     $sender->getInventory()->addItem($getitem);
+			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+				     }else{
+					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+				     }
 		             }else{
 			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 		             }
@@ -225,7 +229,8 @@ class main extends PluginBase implements Listener{
 			                     $sender->getInventory()->addItem($getitem);
 			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
 				     }else{
-					     $sender->sendMessage("[§eCraft§f] "
+					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+				     }
 		             }else{
 			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 		             }
