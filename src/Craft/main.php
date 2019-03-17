@@ -490,19 +490,7 @@ class main extends PluginBase implements Listener{
 			             
 			             case "24":
 			             if(isset($args[1])){
-			                 if(is_numeric($args[1]) && $args[1] >= 0){
-			                    $item = Item::get(155, 0, 3 * $args[1]);
-			                    $getitem = Item::get(44, 6, $args[1]);
-			                    if($sender->getInventory()->contains($item)){
-			                        $sender->getInventory()->removeItem($item);
-			                        $sender->getInventory()->addItem($getitem);
-			                        $sender->sendMessage("レンガブロックを{$args[1]}個 クラフトしました！");
-			                    }else{
-			                        $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
-			                    }
-			                 }else{
-			                     $sender->sendMessage("個数は整数で指定してください");
-			                 }
+			                 $this->CraftSystem($sender, $args[1], 155, 0, 3, 44, 6, "クォーツブロックのハーフ");
 			             }else{
 			                 $sender->sendMessage("use: /carft <クラフトID> <個数>");
 			             }
@@ -570,5 +558,21 @@ class main extends PluginBase implements Listener{
 			 }
 		}
 		return true;
+     }
+	
+     public function CraftSystem(Player $sender, $args, $UseID, $UseDamage, $UseCount, $GetID, $GetDamage, $itemName){
+	     if(is_numeric($args) && $args >= 0){
+		     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
+		     $getitem = Item::get($GetID, $GetDamage, $args);
+		     if($sender->getInventory()->contains($item)){
+			     $sender->getInventory()->removeItem($item);
+			     $sender->getInventory()->addItem($getitem);
+			     $sender->sendMessage("{$itemName}を{$args}個 クラフトしました！");
+		     }else{
+			     $sender->sendMessage("指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+		     }
+	     }else{
+		     $sender->sendMessage("個数は整数で指定してください");
+	     }
      }
 }
