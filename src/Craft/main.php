@@ -26,6 +26,7 @@ class main extends PluginBase implements Listener{
 			if($sender instanceof Player){
 			    if(!isset($args[0])){
 			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
+				$sender->sendMessage("use: /craft list <ページ数>");
 			     }else{
 			        switch($args[0]){
 			             case "1":
@@ -201,6 +202,7 @@ class main extends PluginBase implements Listener{
 					     $sender->sendMessage("| 未設定 | - | 28 |");
 					     $sender->sendMessage("| 未設定 | - | 29 |");
 				             $sender->sendMessage("| 未設定 | - | 30 |");
+					     break;
 							 
 					     case "5":
 					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/5>");
@@ -212,6 +214,7 @@ class main extends PluginBase implements Listener{
 					     $sender->sendMessage("| ラピスラズリブロック | ラピスラズリ×9 | 35 |");
 					     $sender->sendMessage("| 未設定 | - | 36 |");
 				             $sender->sendMessage("| 未設定 | - | 37 |");
+					     break;
 			                     
 			                     default:
 			                     $sender->sendMessage("use: /craft list <ページ数>");
@@ -254,7 +257,6 @@ class main extends PluginBase implements Listener{
 	             }
 	     }else{
 		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
-		     $sender->sendMessage("use: /craft list <ページ数>");
 	     }
      }
 		
@@ -264,7 +266,7 @@ class main extends PluginBase implements Listener{
 			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
 			     $item2 = Item::get($UseID2, $UseDamage2, $UseCount2 * $args);
 		             $getitem = Item::get($GetID, $GetDamage, $args);
-			     if($sender->getInventory()->contains($item) && $sender->getInventory()->contains($items)){
+			     if($sender->getInventory()->contains($item) && $sender->getInventory()->contains($item2)){
 				     if($sender->getInventory()->canAddItem($getitem)){
 					     $sender->getInventory()->removeItem($item);
 				             $sender->getInventory()->removeItem($item2);
