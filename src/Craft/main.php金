@@ -117,8 +117,7 @@ class main extends PluginBase implements Listener{
 			             break;
 			             
 			             case "23":
-			             if(isset($args[1])){
-			                 $this->CraftSystem($sender, $args[1], 155, 0, 3, 44, 6, "クォーツブロックのハーフ");
+			             $this->CraftSystem($sender, $args[1], 155, 0, 3, 44, 6, "クォーツブロックのハーフ");
 			             break;
 					     
 				     case "24":
@@ -127,6 +126,26 @@ class main extends PluginBase implements Listener{
 					   
 				     case "25":
 				     $this->CraftSystem2($sender, $args[1], 86, 0, 1, 50, 0, 1, 91, 0, "ジャック・オ・ランタン");
+				     break;
+						
+				     case "31":
+			             $this->CraftSystem($sender, $args[1], 265, 0, 9, 42, 0, "鉄ブロック");
+			             break;
+					     
+				     case "32":
+				     $this->CraftSystem($sender, $args[1], 266, 0, 9, 41, 0, "金ブロック");
+			             break;
+						
+				     case "33":
+				     $this->CraftSystem($sender, $args[1], 55, 0, 9, 152, 0, "レッドストーンブロック");
+			             break;
+						
+				     case "34":
+				     $this->CraftSystem($sender, $args[1], 386, 0, 9, 133, 0, "エメラルドブロック");
+				     break;
+					
+				     case "35":
+				     $this->CraftSystem($sender, $args[1], 351, 4, 9, 22, 0, "ラピスラズリブロック");
 				     break;
 			                
 			             case "list":
@@ -182,6 +201,17 @@ class main extends PluginBase implements Listener{
 					     $sender->sendMessage("| 未設定 | - | 28 |");
 					     $sender->sendMessage("| 未設定 | - | 29 |");
 				             $sender->sendMessage("| 未設定 | - | 30 |");
+							 
+					     case "5":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/5>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
+				             $sender->sendMessage("| 鉄ブロック | 鉄インゴット×9 | 31 |");
+					     $sender->sendMessage("| 金ブロック | 金インゴット×9 | 32 |");
+					     $sender->sendMessage("| レッドストーンブロック | レッドストーン×9 | 33 |");
+					     $sender->sendMessage("| エメラルドブロック | エメラルド×9 | 34 |");
+					     $sender->sendMessage("| ラピスラズリブロック | ラピスラズリ×9 | 35 |");
+					     $sender->sendMessage("| 未設定 | - | 36 |");
+				             $sender->sendMessage("| 未設定 | - | 37 |");
 			                     
 			                     default:
 			                     $sender->sendMessage("use: /craft list <ページ数>");
