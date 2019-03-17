@@ -542,10 +542,10 @@ class main extends PluginBase implements Listener{
 			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/3>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| オークの木のハーフ | オークの木材×3 | 16 |");
-			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×4 | 9 |");
-			                     $sender->sendMessage("| シラカバの木のハーフ | シラカバの木材×6 | 10 |");
-			                     $sender->sendMessage("| ジャングルの木のハーフ | ジャングルの木材×6 | 11 |");
-			                     $sender->sendMessage("| アカシアの木のハーフ | アカシアの木材×6 | 12 |");
+			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×4 | 17 |");
+			                     $sender->sendMessage("| シラカバの木のハーフ | シラカバの木材×6 | 18 |");
+			                     $sender->sendMessage("| ジャングルの木のハーフ | ジャングルの木材×6 | 19 |");
+			                     $sender->sendMessage("| アカシアの木のハーフ | アカシアの木材×6 | 20 |");
 			                     $sender->sendMessage("| ダークオークの木のハーフ | ダークオーの木材×6 | 21 |");
 			                     $sender->sendMessage("| 石レンガのハーフ | 石レンガ×3 | 22 |");
 			                     $sender->sendMessage("| レンガブロックのハーフ | レンガブロック×3 | 23 |");
