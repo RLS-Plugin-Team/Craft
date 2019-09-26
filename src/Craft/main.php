@@ -151,7 +151,31 @@ class main extends PluginBase implements Listener{
 					
 				     case "35":
 				     $this->CraftSystem($sender, $args[1], 351, 4, 9, 22, 0, "ラピスラズリブロック");
+				     break;	
+							
+				     case "38":
+				     $this->CraftSystem($sender, $args[1], 5, 0, 8, 17, 0, "オークの原木");
+			             break;
+			             
+			             case "39":
+			             $this->CraftSystem($sender, $args[1], 5, 1, 8, 17, 1, "マツの木の原木");
 				     break;
+			             
+			             case "40":
+			             $this->CraftSystem($sender, $args[1], 5, 2, 8, 17, 2, "シラカバの原木");
+			             break;
+			             
+			             case "41":
+			             $this->CraftSystem($sender, $args[1], 5, 3, 8, 17, 3, "ジャングルの原木");
+			             break;
+			                
+			             case "42":
+			             $this->CraftSystem($sender, $args[1], 5, 4, 8, 162, 0, "アカシアの原木");
+			             break;
+			                   
+			             case "43":
+			             $this->CraftSystem($sender, $args[1], 5, 5, 8, 162, 1, "ダークオークの原木");
+			             break;
 			                
 			             case "list":
 			             if(!isset($args[1])){
