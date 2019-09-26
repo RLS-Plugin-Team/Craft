@@ -27,7 +27,10 @@ class main extends PluginBase implements Listener{
 			    if(!isset($args[0])){
 			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
 				$sender->sendMessage("use: /craft list <ページ数>");
-			     }else{
+			     }elseif(!isset($args[1])){
+                                $sender->sendMessage("use: /craft <クラフトID> <個数>");
+				$sender->sendMessage("use: /craft list <ページ数>");
+                             }else{
 			        switch($args[0]){
 			             case "1":
 				     $this->CraftSystem($sender, $args[1], 5, 0, 6, 53, 0, "オークの木の階段");
