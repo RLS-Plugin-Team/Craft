@@ -129,6 +129,10 @@ class main extends PluginBase implements Listener{
 				     $this->CraftSystem2($sender, $args[1], 86, 0, 1, 50, 0, 1, 91, 0, "ジャック・オ・ランタン");
 				     break;
 						
+				     case "26":
+				     $this->CraftSystem($sender, $args[1], 336, 0, 3, 390, 0, "植木鉢");
+				     break;
+				     
 				     case "31":
 			             $this->CraftSystem($sender, $args[1], 265, 0, 9, 42, 0, "鉄ブロック");
 			             break;
@@ -197,7 +201,7 @@ class main extends PluginBase implements Listener{
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 				             $sender->sendMessage("| レンガブロック | レンガ×4 | 24 |");
 					     $sender->sendMessage("| ジャック・オ・ランタン | かぼちゃ×1 松明×1 | 25 |");
-					     $sender->sendMessage("| 未設定 | - | 26 |");
+					     $sender->sendMessage("| 植木鉢 | レンガ×3 | 26 |");
 					     $sender->sendMessage("| 未設定 | - | 27 |");
 					     $sender->sendMessage("| 未設定 | - | 28 |");
 					     $sender->sendMessage("| 未設定 | - | 29 |");
