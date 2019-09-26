@@ -159,7 +159,7 @@ class main extends PluginBase implements Listener{
 			             }else{
 			                 switch($args[1]){
 			                     case "1":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/5>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/6>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| オークの木の階段 | 木材×6 | 1 |");
 			                     $sender->sendMessage("| 石の階段 | 丸石×6 | 2 |");
@@ -171,7 +171,7 @@ class main extends PluginBase implements Listener{
 			                     break;
 			                     
 			                     case "2":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <2/5>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <2/6>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| マツの木の階段 | マツの木材×4 | 8 |");
 			                     $sender->sendMessage("| シラカバの木の階段 | シラカバの木材×6 | 9 |");
@@ -183,21 +183,21 @@ class main extends PluginBase implements Listener{
 			                     break;
 			                     
 			                     case "3":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/5>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/6>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| オークの木のハーフ | オークの木材×3 | 15 |");
-			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×4 | 16 |");
-			                     $sender->sendMessage("| シラカバの木のハーフ | シラカバの木材×6 | 17 |");
-			                     $sender->sendMessage("| ジャングルの木のハーフ | ジャングルの木材×6 | 18 |");
-			                     $sender->sendMessage("| アカシアの木のハーフ | アカシアの木材×6 | 19 |");
-			                     $sender->sendMessage("| ダークオークの木のハーフ | ダークオーの木材×6 | 20 |");
+			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×3 | 16 |");
+			                     $sender->sendMessage("| シラカバの木のハーフ | シラカバの木材×3 | 17 |");
+			                     $sender->sendMessage("| ジャングルの木のハーフ | ジャングルの木材×3 | 18 |");
+			                     $sender->sendMessage("| アカシアの木のハーフ | アカシアの木材×3 | 19 |");
+			                     $sender->sendMessage("| ダークオークの木のハーフ | ダークオークの木材×3 | 20 |");
 			                     $sender->sendMessage("| 石レンガのハーフ | 石レンガ×3 | 21 |");
 			                     $sender->sendMessage("| レンガブロックのハーフ | レンガブロック×3 | 22 |");
 			                     $sender->sendMessage("| クォーツブロックのハーフ | クォーツブロック×3 | 23 |");
 			                     break;
 					     
 					     case "4":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <4/5>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <4/6>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 				             $sender->sendMessage("| レンガブロック | レンガ×4 | 24 |");
 					     $sender->sendMessage("| ジャック・オ・ランタン | かぼちゃ×1 松明×1 | 25 |");
@@ -209,7 +209,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "5":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/5>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/6>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 				             $sender->sendMessage("| 鉄ブロック | 鉄インゴット×9 | 31 |");
 					     $sender->sendMessage("| 金ブロック | 金インゴット×9 | 32 |");
@@ -218,6 +218,17 @@ class main extends PluginBase implements Listener{
 					     $sender->sendMessage("| ラピスラズリブロック | ラピスラズリ×9 | 35 |");
 					     $sender->sendMessage("| 未設定 | - | 36 |");
 				             $sender->sendMessage("| 未設定 | - | 37 |");
+					     break;
+							 
+					     case "6":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/6>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
+					     $sender->sendMessage("| オークの原木 | オークの木材×8 | 38 |");
+			                     $sender->sendMessage("| マツの原木 | マツの木材×8 | 39 |");
+			                     $sender->sendMessage("| シラカバの原木 | シラカバの木材×8 | 40 |");
+			                     $sender->sendMessage("| ジャングルの原木 | ジャングルの木材×8 | 41 |");
+			                     $sender->sendMessage("| アカシアのの原木 | アカシアの木材×8 | 42 |");
+			                     $sender->sendMessage("| ダークオークの原木 | ダークオークの木材×8 | 43 |");
 					     break;
 			                     
 			                     default:
