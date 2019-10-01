@@ -12,11 +12,16 @@ use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\item\Item;
 use pocketmine\block\BlockIds;
+use pocketmine\utils\Config;
 
 class main extends PluginBase implements Listener{
     
 	public function onEnable(){
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		if(!file_exists($this->getDataFolder())){
+			@mkdir($this->getDataFolder(), 0744, true);
+		}
+		$this->data = new Config($this->getDataFolder() . "data.yml", Config::YAML);
 		$this->getServer()->getLogger()->info("Craftを読み込みました");
 	}
 	
@@ -24,6 +29,11 @@ class main extends PluginBase implements Listener{
 		switch($command->getName()){
 			case "craft":
 			if($sender instanceof Player){
+			    if(!$this->data->exists($sender->getName())){
+				$sender->sendMessage("§d注意 §f: §eクラフトIDが一部変更されています");
+				$this->data->set($sender->getName(),count($this->data->getAll())+1);
+			        $this->data->save();
+			    }
 			    if(!isset($args[0])){
 			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
 				$sender->sendMessage("use: /craft list <ページ数>");
