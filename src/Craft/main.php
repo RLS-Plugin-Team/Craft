@@ -204,6 +204,31 @@ class main extends PluginBase implements Listener{
 			             $this->CraftSystem($sender, $args[1], 237, 14, 3, 236, 14, "赤色のコンクリート");
 			             break;
 						
+						
+				     case "50":
+			             $this->CraftSystem($sender, $args[1], 237, 1, 3, 236, 1, "オレンジ色のコンクリート");
+			             break;
+						
+				     case "51":
+			             $this->CraftSystem($sender, $args[1], 237, 4, 3, 236, 4, "黄色のコンクリート");
+			             break;
+						
+				     case "52":
+			             $this->CraftSystem($sender, $args[1], 237, 5, 3, 236, 5, "黄緑色のコンクリート");
+			             break;
+			                
+				     case "53":
+			             $this->CraftSystem($sender, $args[1], 237, 13, 3, 236, 13, "緑色のコンクリート");
+			             break;
+						
+				     case "54":
+			             $this->CraftSystem($sender, $args[1], 237, 9, 3, 236, 9, "水色のコンクリート");
+			             break;
+						
+				     case "55":
+			             $this->CraftSystem($sender, $args[1], 237, 3, 3, 236, 3, "空色のコンクリート");
+			             break;
+						
 			             case "list":
 			             if(!isset($args[1])){
 			                 $sender->sendMessage("§cuse /craft list <ページ数>");
@@ -300,6 +325,17 @@ class main extends PluginBase implements Listener{
 			                     $sender->sendMessage("| 黒色のコンクリート | 黒色のコンクリート　パウダー×3 | 47 |");
 			                     $sender->sendMessage("| 茶色のコンクリート　| 茶色のコンクリート　パウダー×3 | 48 |");
 			                     $sender->sendMessage("| 赤色のコンクリート | 赤色のコンクリート　パウダー×3 | 49 |");
+					     break;
+							 
+					     case "8":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/6>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
+					     $sender->sendMessage("| オレンジ色のコンクリート | オレンジ色のコンクリート パウダー×3 | 50 |");
+			                     $sender->sendMessage("| 黄色のコンクリート| 黄色のコンクリート　パウダー×3 | 51 |");
+			                     $sender->sendMessage("| 黄緑色のコンクリート | 黄緑色のコンクリート　パウダー×3 | 52 |");
+			                     $sender->sendMessage("| 緑色のコンクリート | 緑色のコンクリート　パウダー×3 | 53 |");
+			                     $sender->sendMessage("| 水色のコンクリート　| 水色のコンクリート　パウダー×3 | 54 |");
+			                     $sender->sendMessage("| 空色のコンクリート | 空色のコンクリート　パウダー×3 | 55 |");
 					     break;
 							 
 			                     default:
