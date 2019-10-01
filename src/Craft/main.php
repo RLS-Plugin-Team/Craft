@@ -342,7 +342,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "7":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <7/9>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| 白色のコンクリート | 白色のコンクリート パウダー×3 | 44 |");
 			                     $sender->sendMessage("| 薄灰色のコンクリート| 薄灰色のコンクリート　パウダー×3 | 45 |");
@@ -353,7 +353,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "8":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <8/9>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| オレンジ色のコンクリート | オレンジ色のコンクリート パウダー×3 | 50 |");
 			                     $sender->sendMessage("| 黄色のコンクリート| 黄色のコンクリート　パウダー×3 | 51 |");
@@ -364,7 +364,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "9":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <9/9>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| 青色のコンクリート | 青色のコンクリート パウダー×3 | 56 |");
 			                     $sender->sendMessage("| 紫色のコンクリート| 紫色のコンクリート　パウダー×3 | 57 |");
