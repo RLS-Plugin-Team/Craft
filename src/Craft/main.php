@@ -256,7 +256,7 @@ class main extends PluginBase implements Listener{
 						
 			             case "list":
 			             if(!isset($args[1])){
-			                 $sender->sendMessage("§cuse /craft list <ページ数>");
+			                 $sender->sendMessage("§cuse: /craft list <ページ数>");
 					 $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/9>");
 			                 $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                 $sender->sendMessage("| オークの木の階段 | 木材×6 | 1 |");
