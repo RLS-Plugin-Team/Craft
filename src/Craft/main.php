@@ -37,7 +37,7 @@ class main extends PluginBase implements Listener{
 			    if(!isset($args[0])){
 			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
 				$sender->sendMessage("use: /craft list <ページ数>");
-			     }elseif(!isset($args[1])){
+			     }elseif($args[0] != "list" && !isset($args[1])){
                                 $sender->sendMessage("use: /craft <クラフトID> <個数>");
 				$sender->sendMessage("use: /craft list <ページ数>");
                              }else{
