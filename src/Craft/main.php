@@ -155,7 +155,7 @@ class main extends PluginBase implements Listener{
 			             break;
 						
 				     case "33":
-				     $this->CraftSystem($sender, $args[1], 55, 0, 9, 152, 0, "レッドストーンブロック");
+				     $this->CraftSystem($sender, $args[1], 331, 0, 9, 152, 0, "レッドストーンブロック");
 			             break;
 						
 				     case "34":
@@ -164,7 +164,11 @@ class main extends PluginBase implements Listener{
 					
 				     case "35":
 				     $this->CraftSystem($sender, $args[1], 351, 4, 9, 22, 0, "ラピスラズリブロック");
-				     break;	
+				     break;
+						
+				     case "36":
+				     $this->CraftSystem($sender, $args[1], 263, 0, 9, 173, 0, "石炭ブロック");
+				     break;
 							
 				     case "38":
 				     $this->CraftSystem($sender, $args[1], 5, 0, 8, 17, 0, "オークの原木");
@@ -326,7 +330,7 @@ class main extends PluginBase implements Listener{
 					     $sender->sendMessage("| レッドストーンブロック | レッドストーン×9 | 33 |");
 					     $sender->sendMessage("| エメラルドブロック | エメラルド×9 | 34 |");
 					     $sender->sendMessage("| ラピスラズリブロック | ラピスラズリ×9 | 35 |");
-					     $sender->sendMessage("| 未設定 | - | 36 |");
+					     $sender->sendMessage("| 石炭ブロック | 石炭×9 | 36 |");
 				             $sender->sendMessage("| 未設定 | - | 37 |");
 					     break;
 							 
