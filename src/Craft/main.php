@@ -480,12 +480,13 @@ class main extends PluginBase implements Listener{
 			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
 			     $item2 = Item::get($UseID2, $UseDamage2, $UseCount2 * $args);
 		             $getitem = Item::get($GetID, $GetDamage, $GetCount * $args);
+			     $count = $args * $GetCount;
 			     if($sender->getInventory()->contains($item) && $sender->getInventory()->contains($item2)){
 				     if($sender->getInventory()->canAddItem($getitem)){
 					     $sender->getInventory()->removeItem($item);
 				             $sender->getInventory()->removeItem($item2);
 			                     $sender->getInventory()->addItem($getitem);
-			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$GetCount * $args}個 クラフトしました！");
+			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$count}個 クラフトしました！");
 				     }else{
 					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
 				     }
