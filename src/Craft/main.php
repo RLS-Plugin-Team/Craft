@@ -259,16 +259,16 @@ class main extends PluginBase implements Listener{
 			             $this->CraftSystem2($sender, $args[1], 280, 0, 2, 4, 0, 3, 275, 0, "石の斧");
 			             break;
 						
-				     case "62":
+				     case "63":
 			             $this->CraftSystem2($sender, $args[1], 280, 0, 2, 4, 0, 3, 274, 0, "石のツルハシ");
 			             break;
 						
-				     case "63":
-			             $this->CraftSystem3($sender, $args[1], 280, 0, 2, 4, 0, 3, 275, 0, 4, "石の斧");
+				     case "64":
+			             $this->CraftSystem3($sender, $args[1], 17, 0, 1, 4, 0, 12, 275, 0, 4, "石の斧");
 			             break;
 						
-				     case "64":
-			             $this->CraftSystem3($sender, $args[1], 280, 0, 2, 4, 0, 3, 274, 0, 4, "石のツルハシ");
+				     case "65":
+			             $this->CraftSystem3($sender, $args[1], 17, 0, 1, 4, 0, 12, 274, 0, 4, "石のツルハシ");
 			             break;
 						
 			             case "list":
@@ -393,7 +393,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "10":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <9/{$maxpage}>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <10/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| 石の斧 | 棒×2 丸石×3 | 62 |");
 			                     $sender->sendMessage("| 石のツルハシ | 棒×2 丸石×3 | 63 |");
