@@ -37,10 +37,7 @@ class main extends PluginBase implements Listener{
 			    if(!isset($args[0])){
 			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
 				$sender->sendMessage("use: /craft list <ページ数>");
-			     }elseif($args[0] != "list" && !isset($args[1])){
-                                $sender->sendMessage("use: /craft <クラフトID> <個数>");
-				$sender->sendMessage("use: /craft list <ページ数>");
-                             }else{
+                            }else{
 			        switch($args[0]){
 			             case "1":
 				     $this->CraftSystem($sender, $args[1], 5, 0, 6, 53, 0, "オークの木の階段");
@@ -258,10 +255,19 @@ class main extends PluginBase implements Listener{
 			             $this->CraftSystem($sender, $args[1], 237, 6, 3, 236, 6, "ピンク色のコンクリート");
 			             break;
 						
+				     case "62":
+			             $this->CraftSystem($sender, $args[1], 4, 0, 3, 275, 0, "石の斧");
+			             break;
+						
+				     case "62":
+			             $this->CraftSystem($sender, $args[1], 4, 0, 3, 274, 0, "石のツルハシ");
+			             break;
+						
 			             case "list":
+				     $maxpage = "10";
 			             if(!isset($args[1])){
 			                 $sender->sendMessage("§cuse: /craft list <ページ数>");
-					 $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/9>");
+					 $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/{$maxpage}>");
 			                 $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                 $sender->sendMessage("| オークの木の階段 | 木材×6 | 1 |");
 			                 $sender->sendMessage("| 石の階段 | 丸石×6 | 2 |");
@@ -273,7 +279,7 @@ class main extends PluginBase implements Listener{
 			             }else{
 			                 switch($args[1]){
 			                     case "1":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/9>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| オークの木の階段 | 木材×6 | 1 |");
 			                     $sender->sendMessage("| 石の階段 | 丸石×6 | 2 |");
@@ -285,7 +291,7 @@ class main extends PluginBase implements Listener{
 			                     break;
 			                     
 			                     case "2":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <2/9>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <2/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| マツの木の階段 | マツの木材×4 | 8 |");
 			                     $sender->sendMessage("| シラカバの木の階段 | シラカバの木材×6 | 9 |");
@@ -297,7 +303,7 @@ class main extends PluginBase implements Listener{
 			                     break;
 			                     
 			                     case "3":
-			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/9>");
+			                     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <3/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                     $sender->sendMessage("| オークの木のハーフ | オークの木材×3 | 15 |");
 			                     $sender->sendMessage("| マツの木のハーフ | マツの木材×3 | 16 |");
@@ -311,7 +317,7 @@ class main extends PluginBase implements Listener{
 			                     break;
 					     
 					     case "4":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <4/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <4/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 				             $sender->sendMessage("| レンガブロック | レンガ×4 | 24 |");
 					     $sender->sendMessage("| ジャック・オ・ランタン | かぼちゃ×1 松明×1 | 25 |");
@@ -323,7 +329,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "5":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <5/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 				             $sender->sendMessage("| 鉄ブロック | 鉄インゴット×9 | 31 |");
 					     $sender->sendMessage("| 金ブロック | 金インゴット×9 | 32 |");
@@ -335,7 +341,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "6":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <6/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| オークの原木 | オークの木材×8 | 38 |");
 			                     $sender->sendMessage("| マツの原木 | マツの木材×8 | 39 |");
@@ -346,7 +352,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "7":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <7/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <7/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| 白色のコンクリート | 白色のコンクリート パウダー×3 | 44 |");
 			                     $sender->sendMessage("| 薄灰色のコンクリート| 薄灰色のコンクリート パウダー×3 | 45 |");
@@ -357,7 +363,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "8":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <8/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <8/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| オレンジ色のコンクリート | オレンジ色のコンクリート パウダー×3 | 50 |");
 			                     $sender->sendMessage("| 黄色のコンクリート| 黄色のコンクリート パウダー×3 | 51 |");
@@ -368,7 +374,7 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 					     case "9":
-					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <9/9>");
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <9/{$maxpage}>");
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| 青色のコンクリート | 青色のコンクリート パウダー×3 | 56 |");
 			                     $sender->sendMessage("| 紫色のコンクリート| 紫色のコンクリート パウダー×3 | 57 |");
@@ -376,6 +382,17 @@ class main extends PluginBase implements Listener{
 			                     $sender->sendMessage("| ピンクのコンクリート | ピンクのコンクリート パウダー×3 | 59 |");
 			                     $sender->sendMessage("| 未設定 | - | 60 |");
 			                     $sender->sendMessage("| 未設定 | - | 61 |");
+					     break;
+							 
+					     case "10":
+					     $sender->sendMessage("§a<クラフト可能アイテム一覧>  <9/{$maxpage}>");
+			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
+					     $sender->sendMessage("| 石の斧 | 丸石×3 | 62 |");
+			                     $sender->sendMessage("| 石のツルハシ | 丸石×3 | 63 |");
+			                     $sender->sendMessage("| 未設定 | - | 64 |");
+			                     $sender->sendMessage("| 未設定 | - | 65 |");
+			                     $sender->sendMessage("| 未設定 | - | 66 |");
+			                     $sender->sendMessage("| 未設定 | - | 67 |");	 
 					     break;
 							 
 			                     default:
