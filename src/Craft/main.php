@@ -263,6 +263,14 @@ class main extends PluginBase implements Listener{
 			             $this->CraftSystem2($sender, $args[1], 280, 0, 2, 4, 0, 3, 274, 0, "石のツルハシ");
 			             break;
 						
+				     case "63":
+			             $this->CraftSystem3($sender, $args[1], 280, 0, 2, 4, 0, 3, 275, 0, 4, "石の斧");
+			             break;
+						
+				     case "64":
+			             $this->CraftSystem3($sender, $args[1], 280, 0, 2, 4, 0, 3, 274, 0, 4, "石のツルハシ");
+			             break;
+						
 			             case "list":
 				     $maxpage = "10";
 			             if(!isset($args[1])){
@@ -389,8 +397,8 @@ class main extends PluginBase implements Listener{
 			                     $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 					     $sender->sendMessage("| 石の斧 | 棒×2 丸石×3 | 62 |");
 			                     $sender->sendMessage("| 石のツルハシ | 棒×2 丸石×3 | 63 |");
-			                     $sender->sendMessage("| 未設定 | - | 64 |");
-			                     $sender->sendMessage("| 未設定 | - | 65 |");
+			                     $sender->sendMessage("| 石の斧 4個セット | 原木×1 丸石×12 | 64 |");
+			                     $sender->sendMessage("| 石のツルハシ 4個セット | 原木×1 丸石×12 | 65 |");
 			                     $sender->sendMessage("| 未設定 | - | 66 |");
 			                     $sender->sendMessage("| 未設定 | - | 67 |");	 
 					     break;
@@ -415,7 +423,7 @@ class main extends PluginBase implements Listener{
 		return true;
      }
 	
-     public function CraftSystem(Player $sender, $args, $UseID, $UseDamage, $UseCount, $GetID, $GetDamage, $itemName){
+     public function CraftSystem(Player $sender, $args, $UseID, $UseDamage, $UseCount, $GetID, $GetDamage, $itemName){ //回収アイテム1 giveアイテム1 
 	     if(isset($args)){
 		     if(is_numeric($args) && $args >= 0){
 			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
@@ -439,7 +447,7 @@ class main extends PluginBase implements Listener{
 	     }
      }
 		
-     public function CraftSystem2(Player $sender, $args, $UseID, $UseDamage, $UseCount, $UseID2, $UseDamage2, $UseCount2, $GetID, $GetDamage, $itemName){
+     public function CraftSystem2(Player $sender, $args, $UseID, $UseDamage, $UseCount, $UseID2, $UseDamage2, $UseCount2, $GetID, $GetDamage, $itemName){ //回収アイテム2 giveアイテム1
 	     if(isset($args)){
 		     if(is_numeric($args) && $args >= 0){
 			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
@@ -451,6 +459,33 @@ class main extends PluginBase implements Listener{
 				             $sender->getInventory()->removeItem($item2);
 			                     $sender->getInventory()->addItem($getitem);
 			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+				     }else{
+					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+				     }
+		             }else{
+			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+		             }
+	             }else{
+		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+	             }
+	     }else{
+		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
+		     $sender->sendMessage("use: /craft list <ページ数>");
+	     }
+     }
+	
+     public function CraftSystem3(Player $sender, $args, $UseID, $UseDamage, $UseCount, $UseID2, $UseDamage2, $UseCount2, $GetID, $GetDamage, $GetCount, $itemName){ //回収アイテム2 giveアイテム1の個数指定
+	     if(isset($args)){
+		     if(is_numeric($args) && $args >= 0){
+			     $item = Item::get($UseID, $UseDamage, $UseCount * $args);
+			     $item2 = Item::get($UseID2, $UseDamage2, $UseCount2 * $args);
+		             $getitem = Item::get($GetID, $GetDamage, $GetCount * $args);
+			     if($sender->getInventory()->contains($item) && $sender->getInventory()->contains($item2)){
+				     if($sender->getInventory()->canAddItem($getitem)){
+					     $sender->getInventory()->removeItem($item);
+				             $sender->getInventory()->removeItem($item2);
+			                     $sender->getInventory()->addItem($getitem);
+			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$GetCount * $args}個 クラフトしました！");
 				     }else{
 					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
 				     }
