@@ -30,16 +30,16 @@ class main extends PluginBase implements Listener{
 			case "craft":
 			if($sender instanceof Player){
 			    if(!$this->data->exists($sender->getName())){
-				$sender->sendMessage("§d注意 §f: §eクラフトIDが一部変更されています");
+				$sender->sendMessage("[Craft] §d注意 §f: §eクラフトIDが一部変更されています");
 				$this->data->set($sender->getName(),count($this->data->getAll())+1);
 			        $this->data->save();
 			    }
 			    if(!isset($args[0])){
-			        $sender->sendMessage("use: /craft <クラフトID> <個数>");
-				$sender->sendMessage("use: /craft list <ページ数>");
+			        $sender->sendMessage("usage: /craft <クラフトID> <個数>");
+				$sender->sendMessage("usage: /craft list <ページ数>");
 			    }elseif($args[0] != "list" && !isset($args[1])){
-                                $sender->sendMessage("use: /craft <クラフトID> <個数>");
-				$sender->sendMessage("use: /craft list <ページ数>");
+                                $sender->sendMessage("usage: /craft <クラフトID> <個数>");
+				$sender->sendMessage("usage: /craft list <ページ数>");
                             }else{
 			        switch($args[0]){
 			             case "1":
@@ -277,7 +277,7 @@ class main extends PluginBase implements Listener{
 			             case "list":
 				     $maxpage = "10";
 			             if(!isset($args[1])){
-			                 $sender->sendMessage("§cuse: /craft list <ページ数>");
+			                 $sender->sendMessage("usage: /craft list <ページ数>");
 					 $sender->sendMessage("§a<クラフト可能アイテム一覧>  <1/{$maxpage}>");
 			                 $sender->sendMessage("§a| アイテム名 | 使用アイテム | クラフトID |");
 			                 $sender->sendMessage("| オークの木の階段 | 木材×6 | 1 |");
@@ -407,20 +407,20 @@ class main extends PluginBase implements Listener{
 					     break;
 							 
 			                     default:
-			                     $sender->sendMessage("use: /craft list <ページ数>");
+			                     $sender->sendMessage("usage: /craft list <ページ数>");
 			                     break;
 			                 }
 			             }
 			             break;
 			             
 			             default:
-			             $sender->sendMessage("[§eCraft§f] そのクラフトIDは存在しません");
-			             $sender->sendMessage("[§eCraft§f] クラフトIDを/craft listで確かめてください");
+			             $sender->sendMessage("[Craft] §cそのクラフトIDは存在しません");
+			             $sender->sendMessage("[Craft] §cクラフトIDを/craft listで確かめてください");
 			             break;
 			         }
 			     }
 			 }else{
-			     $sender->sendMessage("[§eCraft§f] ゲーム内で実行してください");
+			     $sender->sendMessage("[Craft] §cゲーム内で実行してください");
 			 }
 		}
 		return true;
@@ -435,18 +435,18 @@ class main extends PluginBase implements Listener{
 				     if($sender->getInventory()->canAddItem($getitem)){
 					     $sender->getInventory()->removeItem($item);
 			                     $sender->getInventory()->addItem($getitem);
-			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+			                     $sender->sendMessage("[Craft] §eitemName}を{$args}個 クラフトしました！");
 				     }else{
-					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+					     $sender->sendMessage("[Craft] §cンベントリに空きがありません");
 				     }
 		             }else{
-			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+			             $sender->sendMessage("[Craft] §cしたアイテムをクラフトするのに必要なアイテムが不足しています");
 		             }
 	             }else{
-		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+		             $sender->sendMessage("[Craft] §c数は整数で指定してください");
 	             }
 	     }else{
-		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
+		     $sender->sendMessage("usage: /craft <クラフトID> <個数>");
 	     }
      }
 		
@@ -461,19 +461,19 @@ class main extends PluginBase implements Listener{
 					     $sender->getInventory()->removeItem($item);
 				             $sender->getInventory()->removeItem($item2);
 			                     $sender->getInventory()->addItem($getitem);
-			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$args}個 クラフトしました！");
+			                     $sender->sendMessage("[Craft] §e{$itemName}を{$args}個 クラフトしました！");
 				     }else{
-					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+					     $sender->sendMessage("[Craft] §cインベントリに空きがありません");
 				     }
 		             }else{
-			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+			             $sender->sendMessage("[Craft] §c指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 		             }
 	             }else{
-		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+		             $sender->sendMessage("[Craft] §c個数は整数で指定してください");
 	             }
 	     }else{
-		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
-		     $sender->sendMessage("use: /craft list <ページ数>");
+		     $sender->sendMessage("usage: /carft <クラフトID> <個数>");
+		     $sender->sendMessage("usage: /craft list <ページ数>");
 	     }
      }
 	
@@ -489,19 +489,19 @@ class main extends PluginBase implements Listener{
 					     $sender->getInventory()->removeItem($item);
 				             $sender->getInventory()->removeItem($item2);
 			                     $sender->getInventory()->addItem($getitem);
-			                     $sender->sendMessage("[§eCraft§f] {$itemName}を{$count}個 クラフトしました！");
+			                     $sender->sendMessage("[Craft] §e{$itemName}を{$count}個 クラフトしました！");
 				     }else{
-					     $sender->sendMessage("[§eCraft§f] インベントリの空きが不足しています");
+					     $sender->sendMessage("[Craft] §cインベントリに空きがありません");
 				     }
 		             }else{
-			             $sender->sendMessage("[§eCraft§f] 指定したアイテムをクラフトするのに必要なアイテムが不足しています");
+			             $sender->sendMessage("[Craft] §c指定したアイテムをクラフトするのに必要なアイテムが不足しています");
 		             }
 	             }else{
-		             $sender->sendMessage("[§eCraft§f] 個数は整数で指定してください");
+		             $sender->sendMessage("[Craft] §c個数は整数で指定してください");
 	             }
 	     }else{
-		     $sender->sendMessage("use: /carft <クラフトID> <個数>");
-		     $sender->sendMessage("use: /craft list <ページ数>");
+		     $sender->sendMessage("usage: /carft <クラフトID> <個数>");
+		     $sender->sendMessage("usage: /craft list <ページ数>");
 	     }
      }
 }
