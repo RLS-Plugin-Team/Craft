@@ -7,6 +7,6 @@ author: narapon
 load: POSTWORLD
 commands:
   craft:
-    description: クラフト
+    description: Craft
     usage: /craft <クラフトID> <個数>
 ...
